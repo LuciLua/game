@@ -1,0 +1,460 @@
+*::before, * , *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    position: absolute;
+}
+
+
+main{
+    background-color: rgb(36, 37, 38);
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+}
+
+.container{
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 700px;
+
+    overflow: hidden;
+}
+
+.container .floor{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.container .monster{
+    position: absolute;
+    display: flex;
+
+    bottom: 200px;
+
+    animation: 5s m_move infinite linear;
+
+    user-select: none;
+
+}
+
+.container .monster .ataque_qt{
+    width: 150px;
+    height: 100px;
+
+    position: absolute;
+
+    z-index: 14;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container .monster .ataque_qt span{
+
+    color: #fff;
+    font-size: 30px;
+    font-family: Arial;
+
+    display: none;
+}
+
+.container .monster p{
+    color: #94f50c;
+    bottom: 0;
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.container .monster #m_01{
+    position: relative;
+    width: 300px;
+
+    border: 1px solid rgba(255, 0, 0, 0.487);
+}
+
+@keyframes m_move {
+    0%, 100%{
+        left: 200px;
+    }
+
+    50%{
+        left: 600px;
+    }
+}
+
+.container .barra-superior{
+    width: 100%;
+    height: 80px;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .centro{
+    width: 100%;
+    height: 540px;
+}
+
+.container .barra-inferior{
+    width: 100%;
+    height: 80px;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+}
+
+.container .barra-inferior .arsenal{
+    width: 80%;
+    height: 95%;
+    position: absolute;
+    bottom: 0;
+    background-color: #38332b;
+
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+
+    display: flex;
+}
+
+.container .barra-inferior .arsenal .case-item{
+    background-color: #38332b;
+    width: 85%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.container .barra-inferior .arsenal .case-item .case{
+    width: 75px;
+    height: 75px;
+    
+    position: relative;
+
+    display: flex;
+
+    flex-direction: row;
+
+    margin: 0 5px 0 5px;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+.container .barra-inferior .arsenal .case-item .case .item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 10;
+
+    user-select: none;
+
+    position: absolute;
+
+    user-select: none;
+}
+
+.container .barra-inferior .arsenal .case-item .case:hover .item-case{
+
+    filter: contrast(1.1);
+    cursor: pointer;
+    z-index: 1;
+}
+
+
+.container .barra-inferior .arsenal .case-item .case #item-case{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    position: absolute;
+}
+
+.container .barra-inferior .arsenal .case-item .primary-case{
+    margin-right: auto;
+    user-select: none;
+}
+
+.container .barra-inferior .arsenal button{
+    width: 15%;
+    height: 95%;
+
+    position: relative;
+
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    user-select: none;
+}
+
+.container .barra-inferior .arsenal button .time_atk{
+
+    position: absolute;
+    font-size: 20px;
+    font-family: Arial;
+
+    z-index: 22;
+    color: #fff;
+
+    text-shadow:  0 0 10px rgb(255, 27, 27);
+
+    pointer-events: none;
+    display: none;
+    user-select: none;
+}
+
+
+.container .barra-inferior .arsenal button #atk{
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+}
+
+.container .barra-inferior .arsenal button #atk_esp{
+    position: absolute;
+    z-index: 10;
+    width: 100px;
+    height: 100px;
+
+    left: 0;
+    top: 0;
+
+    object-fit: cover;
+}
+
+
+.container .barra-inferior .arsenal button #atk_esp:hover{
+    filter: contrast(1.2) hue-rotate(350deg) saturate(2);
+    cursor: pointer;
+}
+
+.container .barra-inferior .arsenal button img:active{
+
+    animation: vibrar_atk 1s linear infinite;
+}
+
+@keyframes vibrar_atk {
+    0%, 100%{
+        transform:rotateZ(0deg)
+    }
+    25%{
+        transform:rotateZ(10deg)
+    }
+    50% {
+        transform:rotateZ(-10deg)
+    }
+    75%{
+        transform:rotateZ(10deg)
+    }
+}
+
+.container .barra-inferior .arsenal button img{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    min-height: 100%;
+
+    object-fit: cover;
+}
+
+.container .barra-superior .mid-progress{
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container .barra-superior .mid-progress p{
+    color: #94f50c;
+    position: relative;
+    font-weight: 800;
+
+    font-family: Arial;
+    font-size: 17px;
+
+    margin-top: 10px;
+}
+
+
+.container .barra-superior .mid-progress .progress-bar{
+    width: 600px;
+    height: 15px;
+    border: 1px solid rgba(0, 255, 0, 0.645);
+    border-radius: 40px;
+    position: relative;
+    overflow: hidden;
+
+    margin-top: 30px;
+}
+
+.container .barra-superior .mid-progress .progress-bar .progress{
+    width: 0%;
+    height: 100%;
+    position: relative;
+    
+    background-color: #94f50c;
+}
+
+.container .barra-superior .bar-level{
+    width: 300px;
+    height: 100%;
+
+    margin-left: auto;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    padding-right: 20px;
+}
+
+.container .barra-superior .bar-level .nivel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 60%;
+    border: 5px solid rgb(0, 225, 255);
+    width: 60px;
+    height: 60px;
+    
+    margin-left: auto;
+}
+
+.container .barra-superior .bar-level .nivel h1{
+    color: #00f7ff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.container .barra-superior .bar-coins{
+    height: 100%;
+    width: 300px;
+
+    padding-left: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .barra-superior .bar-coins .coin_system{
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+
+    margin-left: 25px;
+    color: #e9f50c;
+    font-family: Arial;
+    font-weight: 800;
+    
+    animation: fadeIn 1s linear;
+    opacity: 0%;
+
+    display: none;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0%;
+        bottom: 20px;
+    }
+    
+    100%{
+        opacity: 100%;
+        bottom: 0px;
+    }
+    
+}
+
+.container .barra-superior .bar-coins .coins{
+
+    margin-right: auto;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container .barra-superior .bar-coins .coins h1{
+    color: #e9f50c;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+
+
+    position: relative;
+}
+
+.container .barra-superior .bar-coins .coins h1::after{
+    content: '';
+    width: 25px;
+    height: 25px;
+
+    background-image: url('../img/coin.png');
+    position: absolute;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    right: -40px;
+    top: 1px;
+}
+
+@keyframes ataque{
+    0%, 100%{
+        filter: contrast(1) hue-rotate(300deg) saturate(1.4);
+    }
+    50%{
+        filter: contrast(1.5);
+    }
+    
+}

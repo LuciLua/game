@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monsters time</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <img class="floor" src="/img/ambient.png" alt="">
+            <div class="monster">
+                <div class="ataque_qt">
+                    <span id="qt">-10</span>
+                </div>
+                <img id="m_01" src="./img/monster_01.png" alt="">
+                <div class="info">
+                    <p>
+                        Vida: <span id="life_01">300<span><br>
+                    </p>
+                    <p>
+                        Tipo: <span>Selva</span><br>
+                    </p>
+                    <p>
+                        Nome: <span>Cramo</span><br>
+                    </p>
+                </div>
+            </div>
+            <div class="barra-superior">
+                <div class="bar-coins">
+                    <div class="coin_system coin_system_add">+<span id="coin_add">20</span></div>
+                    <div class="coin_system coin_system_del">-<span id="coin_add">20</span></div>
+                    <div class="coins">
+                        <h1 id="coins">500</h1>
+                    </div>
+                </div>
+                <div class="mid-progress">
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <p>13.450/100.000 xp</p>
+                </div>
+                <div class="bar-level">
+                    <div class="nivel">
+                        <h1 class="nl">1</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="centro"></div>
+            <div class="barra-inferior">
+                <div class="arsenal">
+                    <div class="case-item">
+                        <div class="primary-case case">
+                            <div class="item">
+                                <img src="img/item_01.png" alt="">
+                            </div>
+                            <img class="item-case" src="img/item-case-primary.png" alt="">
+                        </div>
+                        <div class="case">
+                            <div class="item">
+                                <img src="./img/item_02.png" alt="">
+                            </div>
+                            <img class="item-case" src="img/item-case.png" alt="">
+                        </div>
+                        <div class="case">
+                            <div class="item">
+                                <img src="" alt="">
+                            </div>
+                            <img class="item-case" src="img/item-case.png" alt="">
+                        </div>
+                        <div class="case">
+                            <div class="item">
+                                <img src="" alt="">
+                            </div>
+                            <img class="item-case" src="img/item-case.png" alt="">
+                        </div>
+                        <div class="case">
+                            <div class="item">
+                                <img src="" alt="">
+                            </div>
+                            <img class="item-case" src="img/item-case.png" alt="">
+                        </div>
+                        <div class="case">
+                            <div class="item">
+                                <img src="" alt="">
+                            </div>
+                            <img class="item-case" src="img/item-case.png" alt="">
+                        </div>
+                    </div>
+                    <button class="btn-ataque" onclick="ataque()">
+                        <h1 class="time_atk">4s</h1>
+                        <img id="atk" src="/img/atacar.png" alt="">
+                        <img id="atk_esp" src="/img/atacar_esp.png" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
