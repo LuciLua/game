@@ -44,6 +44,7 @@ main{
 .container .monster{
     position: absolute;
     display: flex;
+    flex-direction: column;
 
     bottom: 200px;
 
@@ -78,19 +79,52 @@ main{
 
 .container .monster p{
     color: #94f50c;
+
     bottom: 0;
+
     width: fit-content;
     height: fit-content;
+
     position: relative;
     font-family: Arial, Helvetica, sans-serif;
+
+    display: none;
+}
+
+.container .monster:hover p{
+    display: block;
 }
 
 
 .container .monster #m_01{
     position: relative;
     width: 300px;
+}
 
-    border: 1px solid rgba(255, 0, 0, 0.487);
+
+.monster .info{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.monster .info .lifeProgressMonster{
+    width: 70%;
+    height: 10px;
+    border-radius: 40px;
+
+    border: 1px solid #fff;
+    position: relative;
+
+    overflow: hidden;
+}
+
+.monster .info .lifeProgressMonster .lifeProgress_m_01{
+    background-color: #f50c0c;
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
 @keyframes m_move {
@@ -377,19 +411,16 @@ main{
     height: 100%;
     width: 300px;
 
-    padding-left: 20px;
-
     display: flex;
     align-items: center;
     justify-content: center;
+
+    flex-direction: column;
 }
 
 .container .barra-superior .bar-coins .coin_system{
-    position: absolute;
-    bottom: 0;
-    left: 15px;
+    position: relative;
 
-    margin-left: 25px;
     color: #e9f50c;
     font-family: Arial;
     font-weight: 800;
@@ -397,18 +428,21 @@ main{
     animation: fadeIn 1s linear;
     opacity: 0%;
 
+    margin-right: auto;
+    margin-left: 40px;
+
     display: none;
 }
 
 @keyframes fadeIn{
     0%{
         opacity: 0%;
-        bottom: 20px;
+        top: 40px;
     }
     
     100%{
         opacity: 100%;
-        bottom: 0px;
+        top: 50px;
     }
     
 }
@@ -423,6 +457,10 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+
+    position: absolute;
+
+    left: 20px;
 
 }
 

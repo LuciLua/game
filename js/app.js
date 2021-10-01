@@ -16,11 +16,13 @@ var audio = new Audio('../sound/monster.mp3');
 var coinSystemAdd = document.querySelector('.coin_system_add')
 var coinSystemDel = document.querySelector('.coin_system_del')
 
+var xpAtual = document.getElementById('xpAtual')
+
 function ataque(){
 
     audio.play();
 
-    xp += 10
+    xp += 25
     xpProgress.style.transition = '1s'
     xpProgress.style.width = `${xp}%`
 
@@ -31,6 +33,8 @@ function ataque(){
         setTimeout(function(){
             xpProgress.style.width = `0%`
             xp = 0 
+            xpAtual.textContent = 0 
+
         }, 1000)
         
         coins_qt += 100
@@ -38,8 +42,12 @@ function ataque(){
 
     }
 
+    var lifeRetirada = 10
+    var lifeTotalMosnter = life_01.textContent -= lifeRetirada
+    
+    var lifeProgress_m_01 = document.querySelector('.lifeProgress_m_01')
+    lifeProgress_m_01.style.width = `${lifeTotalMosnter}%`
 
-    life_01.textContent -= 10
 
     coins_qt -= 20
     coins.textContent = coins_qt
@@ -57,6 +65,7 @@ function ataque(){
 
     setTimeout(function(){
         coinSystemDel.style.display='none'
+        coinSystemAdd.style.display='none'
     }, 2000)
 
 
@@ -64,8 +73,8 @@ function ataque(){
         alert('game over!')
     }
     if(life_01.textContent <= 0){
-        alert('Você ganhou!')
         m_01.style.display = 'none'
+        coinSystemAdd.style.display = 'flex'
     }
 
     var btn_ataque = document.querySelector('.btn-ataque')
@@ -85,24 +94,24 @@ function ataque(){
 
 
     time_atk.style.display='flex'
-    carregamento_ataque = 4000
-    time_atk.textContent = carregamento_ataque
+    carregamento_ataque = 4
+    time_atk.textContent = carregamento_ataque + 's'
 
 
     const intervalo = setInterval(function(){
 
-        carregamento_ataque -= 1000
-        time_atk.textContent = carregamento_ataque
+        carregamento_ataque -= 1
+        time_atk.textContent = carregamento_ataque + 's'
         
         if( carregamento_ataque === 0 ){
             clearInterval( intervalo )
-            carregamento_ataque == 4000
-            setTimeout(function(){
-                time_atk.textContent = carregamento_ataque
-                time_atk.style.display='none'
-            }, 100)
+            carregamento_ataque == 4
+            time_atk.textContent = carregamento_ataque
+            time_atk.style.display='none'
         }
         
     }, 1000)
+
+    xpAtual.textContent = xp
 
 }
