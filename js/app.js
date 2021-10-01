@@ -37,8 +37,9 @@ function ataque(){
 
         }, 1000)
         
-        coins_qt += 100
+        coins_qt += 25
         coins.textContent = coins_qt
+        coinSystemAdd.style.display = 'flex'
 
     }
 
@@ -90,11 +91,11 @@ function ataque(){
     setTimeout(function(){
         btn_ataque.style.pointerEvents = 'all'
         btn_ataque_img.style.filter='contrast(1)'
-    }, 4000)
+    }, 2000)
 
 
     time_atk.style.display='flex'
-    carregamento_ataque = 4
+    carregamento_ataque = 2
     time_atk.textContent = carregamento_ataque + 's'
 
 
@@ -105,7 +106,7 @@ function ataque(){
         
         if( carregamento_ataque === 0 ){
             clearInterval( intervalo )
-            carregamento_ataque == 4
+            carregamento_ataque == 2
             time_atk.textContent = carregamento_ataque
             time_atk.style.display='none'
         }
